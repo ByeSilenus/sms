@@ -541,9 +541,12 @@ a.link-button-glyph.btn.button.goto-top:hover {
   }
 
   h1.heading-2 {
+    display: inline;
+
     -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
             align-self: flex-end;
+    grid-area: auto / auto / auto / auto;
   }
 
   span.text-element.img-caption {
