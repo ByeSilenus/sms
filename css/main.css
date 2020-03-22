@@ -636,7 +636,7 @@ a.link-button-glyph.btn.button.goto-top:hover {
     display:    -moz-box;
     display: -ms-flexbox;
     display:         flex;
-    width: 166px;
+    width: 200px;
 
     grid-area: auto;
     justify-self: stretch;
