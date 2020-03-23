@@ -34,12 +34,6 @@ span.text-element.img-caption {
   font-size: .875em;
 }
 
-span.text-element span.caption-title {
-  color: #fff;
-  letter-spacing: .125rem;
-  font-weight: 700;
-}
-
 a.link-text {
   font-family: 'Roboto', cursive;
 }
@@ -310,6 +304,75 @@ body.body-2 {
           flex-wrap: wrap;
 }
 
+.container.gallery-wrapper {
+  max-width: 1000px;
+}
+
+.container.gallery-content {
+  position: relative;
+  overflow: hidden;
+  margin-top: 5vw;
+}
+
+.container.main-image-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.container#image-1 {
+  z-index: 51;
+  display: none;
+}
+
+.container#image-2 {
+  z-index: 52;
+  display: none;
+}
+
+.container#image-3 {
+  z-index: 53;
+  display: block;
+}
+
+.container#image-4 {
+  z-index: 54;
+  display: none;
+}
+
+.container#image-5 {
+  z-index: 55;
+  display: none;
+}
+
+.container#image-6 {
+  z-index: 56;
+  display: none;
+}
+
+.container.thumbnails-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display:    -moz-box;
+  display: -ms-flexbox;
+  display:         flex;
+  padding-top: 10px;
+}
+
+.container.thumbnail-cont {
+  padding-right: 1px;
+  padding-left: 1px;
+}
+
+.container.button.thumbnail-cont {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+}
+
 .container.gallery-nav:hover {
   background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .498039) 0%, rgba(29, 30, 33, .8) 80%), url('../images/Architecture/photo-1442406964439-e46ab8eff7c4.jpg');
   background-image:    -moz-linear-gradient(left, rgba(255, 255, 255, .498039) 0%, rgba(29, 30, 33, .8) 80%), url('../images/Architecture/photo-1442406964439-e46ab8eff7c4.jpg');
@@ -368,14 +431,6 @@ body.body-2 {
   background-image:         linear-gradient(90deg, rgba(255, 255, 255, .498039) 0%, rgba(29, 30, 33, .8) 80%), url('../images/Urban/photo-1415477443266-a3dae24810b2.jpg');
 }
 
-a.responsive-picture.gallery-img {
-  max-width: 75em;
-}
-
-a.responsive-picture.gallery-img.portrait {
-  max-width: 50em;
-}
-
 a.glyph.close-button {
   position: static;
   margin-right: auto;
@@ -422,12 +477,60 @@ a.link-button-glyph.btn.button.goto-top {
           transition-property: all;
 }
 
+div.responsive-picture.main-image {
+  margin-top: -80px;
+  max-width: none;
+  max-height: 350px;
+  -webkit-transform: scaleX(1.2) scaleY(1.2);
+     -moz-transform: scaleX(1.2) scaleY(1.2);
+       -o-transform: scaleX(1.2) scaleY(1.2);
+          transform: scaleX(1.2) scaleY(1.2);
+}
+
+div.responsive-picture#placer {
+  opacity: .1;
+}
+
+div.responsive-picture.thumbnail-img {
+  opacity: .5;
+  -webkit-filter: saturate(1) contrast(1) brightness(1) grayscale(.6);
+          filter: saturate(1) contrast(1) brightness(1) grayscale(.6);
+  -webkit-transition-duration: .4s;
+     -moz-transition-duration: .4s;
+       -o-transition-duration: .4s;
+          transition-duration: .4s;
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+}
+
 a.link-button-glyph.btn.button.goto-top:hover {
   background-color: #2f3133;
   -webkit-transition-duration: .15s;
      -moz-transition-duration: .15s;
        -o-transition-duration: .15s;
           transition-duration: .15s;
+}
+
+div.responsive-picture.thumbnail-img:hover {
+  opacity: 1;
+  -webkit-filter: saturate(1) contrast(1) brightness(1) grayscale(0);
+          filter: saturate(1) contrast(1) brightness(1) grayscale(0);
+  -webkit-transition-duration: .4s;
+     -moz-transition-duration: .4s;
+       -o-transition-duration: .4s;
+          transition-duration: .4s;
+  -webkit-transition-property: all;
+     -moz-transition-property: all;
+       -o-transition-property: all;
+          transition-property: all;
+}
+
+@media screen and (min-width: 27.5rem) {
+  div.responsive-picture.main-image {
+    max-height: 450px;
+  }
 }
 
 @media screen and (min-width: 28.125rem) {
@@ -464,10 +567,6 @@ a.link-button-glyph.btn.button.goto-top:hover {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
-  }
-
-  a.responsive-picture.gallery-img {
-    margin-bottom: .625em;
   }
 }
 
@@ -512,6 +611,14 @@ a.link-button-glyph.btn.button.goto-top:hover {
        -moz-box-pack: center;
             justify-content: center;
   }
+
+  .container.gallery-content {
+    margin-top: 3vw;
+  }
+
+  div.responsive-picture.main-image {
+    max-height: 650px;
+  }
 }
 
 @media screen and (min-width: 50rem) {
@@ -550,8 +657,21 @@ a.link-button-glyph.btn.button.goto-top:hover {
   }
 
   span.text-element.img-caption {
+    text-align: left;
+    text-indent: 0;
     font-size: 17px;
     line-height: 1.2;
+  }
+
+  span.text-element span.text-text-2 {
+    font-size: 1.0625rem;
+    font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+  }
+
+  span.text-element b.text-text-3 {
+    font-weight: 400;
+    font-size: 1.1875rem;
+    font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
   }
 
   a.link-text.menu-item-1 {
@@ -580,10 +700,6 @@ a.link-button-glyph.btn.button.goto-top:hover {
   }
 
   a.link-text span.text-link-text-3 {
-    font-size: 1.125rem;
-  }
-
-  a.link-text span.text-link-text-4 {
     font-size: 1.125rem;
   }
 
@@ -637,14 +753,34 @@ a.link-button-glyph.btn.button.goto-top:hover {
   }
 
   .container.gallery-nav.portraits {
-    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%), url('../images/Portraits/photo-1445076129285-0f73155f2d3c.jpg');
-    background-image:    -moz-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%), url('../images/Portraits/photo-1445076129285-0f73155f2d3c.jpg');
-    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%), url('../images/Portraits/photo-1445076129285-0f73155f2d3c.jpg');
-    background-image:         linear-gradient(90deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%), url('../images/Portraits/photo-1445076129285-0f73155f2d3c.jpg');
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%);
+    background-image:    -moz-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%);
+    background-image:         linear-gradient(90deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .78) 80%);
+    background-attachment: scroll;
+    background-position: left top;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+
+    background-blend-mode: normal;
   }
 
   .container.gallery-nav.urban {
     width: 50%;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:    -moz-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:         linear-gradient(90deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-attachment: scroll;
+    background-position: left top;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+
+    background-blend-mode: normal;
   }
 
   .container.food.gallery-nav {
@@ -664,6 +800,36 @@ a.link-button-glyph.btn.button.goto-top:hover {
 
     grid-area: auto;
     justify-self: stretch;
+  }
+
+  .container.gallery-content {
+    margin-top: 2vw;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+  }
+
+  .container.gallery-column {
+    display: block;
+    padding-top: 6.25em;
+    padding-bottom: 6.25em;
+    min-width: 20px;
+    min-height: 50px;
+  }
+
+  .container.architecture.gallery-nav {
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:    -moz-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-image:         linear-gradient(90deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .8) 80%);
+    background-attachment: scroll;
+    background-position: left top;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+
+    background-blend-mode: normal;
   }
 
   .container.gallery-nav.urban:hover {
