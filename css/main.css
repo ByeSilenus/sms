@@ -376,6 +376,26 @@ a.responsive-picture.gallery-img.portrait {
   max-width: 50em;
 }
 
+a.glyph.close-button {
+  position: static;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 14px;
+  padding-bottom: 50px;
+  padding-left: 2px;
+  color: #fff;
+  text-align: center;
+  font-size: 60px;
+}
+
+span.glyph.open-button {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  color: #fff;
+}
+
 a.link-button-glyph.btn.button.goto-top {
   position: fixed;
   right: 20px;
@@ -400,26 +420,6 @@ a.link-button-glyph.btn.button.goto-top {
      -moz-transition-property: all;
        -o-transition-property: all;
           transition-property: all;
-}
-
-a.glyph.close-button {
-  position: static;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 14px;
-  padding-bottom: 50px;
-  padding-left: 2px;
-  color: #fff;
-  text-align: center;
-  font-size: 60px;
-}
-
-span.glyph.open-button {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 20px;
-  color: #fff;
 }
 
 a.link-button-glyph.btn.button.goto-top:hover {
@@ -536,7 +536,7 @@ a.link-button-glyph.btn.button.goto-top:hover {
   h1 span.heading-text-1 {
     color: #fff;
     font-weight: 400;
-    font-size: 2.75rem;
+    font-size: 3rem;
     font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
   }
 
@@ -569,6 +569,30 @@ a.link-button-glyph.btn.button.goto-top:hover {
 
   a.link-text.menu-item {
     display: block;
+  }
+
+  a.link-text span.text-link-text-1 {
+    font-size: 1.125rem;
+  }
+
+  a.link-text span.text-link-text-2 {
+    font-size: 1.125rem;
+  }
+
+  a.link-text span.text-link-text-3 {
+    font-size: 1.125rem;
+  }
+
+  a.link-text span.text-link-text-4 {
+    font-size: 1.125rem;
+  }
+
+  a.link-text span.text-link-text-5 {
+    font-size: 1.125rem;
+  }
+
+  a.link-text span.text-link-text-6 {
+    font-size: 1.125rem;
   }
 
   /* Layout Elements */
@@ -636,7 +660,7 @@ a.link-button-glyph.btn.button.goto-top:hover {
     display:    -moz-box;
     display: -ms-flexbox;
     display:         flex;
-    width: 200px;
+    width: 210px;
 
     grid-area: auto;
     justify-self: stretch;
